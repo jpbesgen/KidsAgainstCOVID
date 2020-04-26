@@ -9,15 +9,16 @@ const Banner = (props) => {
 		<div>
 			<Container fluid style={{ background: '#000038', paddingLeft: '5%' }}>
 				<Row className="align-items-center">
-					<Col xs={6}>
+					<Col xs={props.image != undefined ? 6: 12}>
 						<p style={style.BannerText}>{props.text.toUpperCase()}</p>
 					</Col>
-					<Col xs={6}>
+					<Col xs={props.image != undefined ? 6: 0}>
+						{props.image != undefined && 
 						<img
 							src={props.image}
 							alt="covid particle"
 							style={{ height: '221px', marginLeft: '25%' }}
-						/>
+						/>}
 					</Col>
 				</Row>
 			</Container>

@@ -123,6 +123,7 @@ export default class HospitalSearchComponent extends React.Component {
                     types={['address']}
                     componentRestrictions={{country: "us"}}
                 />
+                { this.state.hospitals.length == 0 && <div style={{ padding: '40px 0'}}/> }
                 {/* <p>Zip Code: {this.state.zip_code ? JSON.stringify(this.state.zip_code) : "HI"}</p> */}
             </div>
             { this.state.hospitals.length != 0 && this.renderHospitalSearchResultsText() }
