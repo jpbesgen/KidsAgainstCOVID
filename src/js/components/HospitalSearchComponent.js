@@ -14,7 +14,7 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     componentWillUnmount() {
-
+        
     }
 
     findClosestHospitals() {
