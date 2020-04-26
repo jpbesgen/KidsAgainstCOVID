@@ -10,6 +10,7 @@ export default class HospitalCard extends React.Component {
         super(props);
         
         this.handleClick = this.handleClick.bind(this);
+        this.handleMouseOver = this.handleMouseOver.bind(this);
     }
 
     handleClick(event) {
@@ -19,11 +20,18 @@ export default class HospitalCard extends React.Component {
         });
     }
 
+    handleMouseOver(event) {
+        // react to mousing over the card
+        
+    }
+
 	render() {
 		const { setItem, formState } = this.props;
 
 		return (
-			<div style={style.HospitalCard} onClick={(event) => {this.handleClick(event)}}>
+            <div style={style.HospitalCard} 
+                onMouseOver={(event) => {this.handleMouseOver(event)}}
+                onClick={(event) => {this.handleClick(event)}}>
                 <Container fluid>
                     <Row className="justify-content-center align-items-center"> 
                         <Col className="text-center align-items-center">
