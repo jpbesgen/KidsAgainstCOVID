@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 import Autocomplete from 'react-google-autocomplete';
+import { navigate } from '@reach/router';
 
 export default class HospitalSearchComponent extends React.Component {
     constructor(props) {
@@ -88,6 +89,10 @@ export default class HospitalSearchComponent extends React.Component {
     handleCardClicked(event, card_data) {
         console.log(event);
         console.log(card_data);
+        navigate("/thanks", {state: {
+            name: this.props.name,
+            address: this.props.address,
+        }})
     }
     
 	renderHospitalList() {

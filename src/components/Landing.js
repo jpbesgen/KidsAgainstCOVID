@@ -129,7 +129,7 @@ const Landing = () => {
 				</Row>
 			</Container>
 
-			<Container fluid>
+			{/* <Container fluid>
 				<Row
 					className="justify-content-center"
 					style={{ padding: '6.5% 0 10.2% 0' }}
@@ -162,7 +162,7 @@ const Landing = () => {
 						/>
 					</Col>
 				</Row>
-			</Container>
+			</Container> */}
 		</div>
 	);
 };

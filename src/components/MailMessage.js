@@ -39,7 +39,7 @@ const MailMessage = () => {
 				style={{
 					borderTop: '1px solid #000038',
 					borderBottom: '1px solid #000038',
-					padding: '10px 0',
+					padding: ' 0',
 				}}
 			>
 				<Row className="align-items-center justify-content-around">
