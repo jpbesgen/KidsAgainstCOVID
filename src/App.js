@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from '@reach/router';
 
 import Landing from './components/Landing';
-import Map from './components/Map';
+import MapPage from './components/MapPage';
 import Notes from './components/Notes';
 import About from './components/About';
 import VideoMessage from './components/VideoMessage';
@@ -19,7 +19,7 @@ function App() {
 			<div style={{ minHeight: '95.5vh' }}>
 				<Router>
 					<Landing path="/" />
-					<Map path="/map" />
+					<MapPage path="/map" />
 					<Notes path="/notes" />
 					<About path="/about" />
 					<VideoMessage path="/video-message" />

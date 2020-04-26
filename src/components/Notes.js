@@ -72,18 +72,18 @@ const Banner = (props) => {
 
 const style = {
 	BannerText: {
-		fontSize: '30px',
+		fontSize: '24px',
 		color: 'white',
 		fontWeight: '700',
 		margin: '2.5vh 0',
 	},
 	Header3: {
-		fontSize: '30px',
+		fontSize: '24px',
 		fontWeight: '6s00',
 		padding: '0 0 2vh 0',
 	},
 	DescriptiveText: {
-		fontSize: '24px',
+		fontSize: '20px',
 		fontWeight: '300',
 		padding: '0 8% 4vh 8%',
 	},
