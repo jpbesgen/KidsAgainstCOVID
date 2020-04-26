@@ -1,12 +1,14 @@
 import React from "react";
 
 import axios from 'axios';
-import { queries } from "@testing-library/react";
-import qs from 'qs';
+import Autocomplete from 'react-google-autocomplete';
 
 export default class HospitalSearchComponent extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            address_components: "",
+        }
     }
 
     componentDidMount() {
@@ -15,6 +17,11 @@ export default class HospitalSearchComponent extends React.Component {
 
     componentWillUnmount() {
         
+    }
+
+    getZipCodeFromGooglePlace(place) {
+        let obj = place.address_components.find(obj => obj.types.includes("postal_code"));
+        return obj.long_name;
     }
 
     findClosestHospitals() {
@@ -36,7 +43,19 @@ export default class HospitalSearchComponent extends React.Component {
     render() {
         return (
             <div>
-                
+                Brother may I have some oats. {this.props.name}
+                <Autocomplete
+                    style={{width: '90%'}}
+                    onPlaceSelected={(place) => {
+                        console.log(place);
+                        console.log("TYPE:", typeof(place.address_components))
+                        this.setState({address_components: this.getZipCodeFromGooglePlace(place)})
+                    }}
+
+                    types={['address']}
+                    componentRestrictions={{country: "us"}}
+                />
+                <p>Address: {this.state.address_components ? JSON.stringify(this.state.address_components) : "HI"}</p>
             </div>
         );
     }
