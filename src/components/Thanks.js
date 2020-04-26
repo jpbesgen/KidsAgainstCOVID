@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 
 const Thanks = (props) => {
     return (
-        <div>
+        <div style={{height: "150vh"}}>
             <Navbar />
             <Banner text='Thank you' />
             <Container
@@ -20,12 +20,7 @@ const Thanks = (props) => {
                 }}
             >
                 <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
-                    <h3 style={style.Header3}>
-                        Thanks for your submission!! Look at where our letters have come from!
-					</h3>
-                </Row>
-                <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
-                    <p> You offered to send a note to <b>{props.location.state.name}.<br /></b></p>
+                    <p> <b>Thank you for your submission!</b><br/> You offered to send a note to <b>{props.location.state.name}.<br /></b><br /></p>
                 </Row>
                 { props.location.state != null && props.location.state.url != null ? 
                     <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
@@ -41,6 +36,11 @@ const Thanks = (props) => {
                         {props.location.state.address}
                     </p>
                 </Row>
+                <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
+                    <p>
+                        <b>Here are some other notes that have been sent around the country: <br /></b>
+                    </p>
+                </Row>
             </Container>
             <Container
                 style={{
@@ -51,9 +51,6 @@ const Thanks = (props) => {
                 }}
             >
                 <MapComponent />
-            </Container>
-            <Container>
-                <div style={{ marginBottom: "20px" }} />
             </Container>
         </div >
     );

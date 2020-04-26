@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 
 const MapPage = () => {
 	return (
-		<div>
+		<div style={{height: "200vh"}}>
 			<Navbar />
 			<Banner text="DELIVERED THANK YOU NOTES"/>
 			{/* <Container
@@ -30,11 +30,12 @@ const MapPage = () => {
 					paddingTop: '3vh',
 					paddingBottom: '3vh',
 					width: '90vw',
-					height: '50px',
+					height: '100vw',
 				}}
 			>
 				<MapComponent />
 			</Container>
+			<div> Hey</div>
 		</div>
 	);
 };

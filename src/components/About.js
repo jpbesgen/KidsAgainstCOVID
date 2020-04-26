@@ -17,12 +17,18 @@ const About = () => {
 			>
 				<Row className="justify-content-center">
 					<h3 style={style.Header3}>
-						We're a group of UC Berkeley Students who've come together at
-						Hack:Now 2020 to help build a site that allows children to send
-						letters of thanks to those on the frontline of the coronavirus
-						outbreak. We hope that by doing so, morale in our battle can
-						strengthen as we all work to #flatten the curve together.{' '}
+						ABOUT US
 					</h3>
+					<p style={style.DescriptiveText}>
+					We are a team of undergraduate students from UC Berkeley and UC Santa Cruz looking to help in any way that we can during the COVID-19 Crisis. 
+					We are proudly part of a broader community of designers, makers, and innovators trying to do our best to tackle the crises brought by the pandemic. 
+					<br />
+					<br />
+					Our sister projects can be found at: <br/>
+					<a href="https://resource19.org">resource19.org</a><br/>
+					<a href="https://shareddistance.com">shareddistance.com</a><br/>
+					<a href="https://covid-19list.com">covid-19list.com</a>
+					</p>
 				</Row>
 			</Container>
 		</div>
@@ -37,12 +43,12 @@ const style = {
 		margin: '2.5vh 0',
 	},
 	Header3: {
-		fontSize: '30px',
+		fontSize: '24px',
 		fontWeight: '6s00',
 		padding: '0 0 2vh 0',
 	},
 	DescriptiveText: {
-		fontSize: '24px',
+		fontSize: '18px',
 		fontWeight: '300',
 		padding: '0 8% 4vh 8%',
 	},
