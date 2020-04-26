@@ -6,7 +6,7 @@ export default class DrawingComponent extends React.Component {
     }
 
     componentDidMount() {
-
+        
     }
 
     componentWillUnmount() {
