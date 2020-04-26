@@ -4,6 +4,7 @@ import hospital from '../../img/hospital.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import { navigate } from "@reach/router"
 
 export default class HospitalCard extends React.Component {
     constructor(props) {
@@ -19,6 +20,10 @@ export default class HospitalCard extends React.Component {
             name: this.props.name,
             address: this.props.address,
         });
+        navigate("/thanks", {state: {
+            name: this.props.name,
+            address: this.props.address,
+        }})
     }
 
     handleMouseOver(event) {
@@ -56,7 +61,7 @@ const style = {
     HospitalCard: {
         padding: '10px',
         width: '190px',
-        height: '250px',
+        height: '265px',
         margin: '10px auto',
         backgroundColor: '#fff',
         borderRadius: '5px',

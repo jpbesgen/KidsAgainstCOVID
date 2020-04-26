@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import HospitalSearchComponent from '../js/components/HospitalSearchComponent';
+import Banner from './Banner';
 import MapComponent from '../js/components/MapComponent';
 
 import Container from 'react-bootstrap/Container';
@@ -10,7 +11,8 @@ const MapPage = () => {
 	return (
 		<div>
 			<Navbar />
-			<Container
+			<Banner text="DELIVERED THANK YOU NOTES"/>
+			{/* <Container
 				fluid
 				style={{
 					borderTop: '2px solid #000038',
@@ -22,7 +24,7 @@ const MapPage = () => {
 						Look at where our letters have come from!
 					</h3>
 				</Row>
-			</Container>
+			</Container> */}
 			<Container
 				style={{
 					paddingTop: '3vh',
