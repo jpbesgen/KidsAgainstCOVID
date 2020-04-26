@@ -98,7 +98,7 @@ export default class LetterToolComponent extends React.Component {
         });
     }
 
-    continueLetter() {
+    continueLetter(lat, long) {
         this.setState({
             continuing: true,
         });
@@ -320,6 +320,14 @@ export default class LetterToolComponent extends React.Component {
 
                     </div>
                 </div>
+
+                {this.continuing ? 
+                    <LetterForHospital
+                        uploadLetter = {this.uploadLetter}
+                    />
+                    :
+                    null
+                }
             </div>
         );
     }
