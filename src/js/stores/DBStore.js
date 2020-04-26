@@ -36,14 +36,24 @@ class DBStore extends EventEmitter {
         })
     }
 
-    async uploadLetter(blob, metadata) {
+    async uploadLetter(blob, data) {
         return new Promise((resolve, reject) => {
             let letter_ref = db.collection("Letters").doc(),
                 letter_id = letter_ref.id;
-            this.uploadBlob(blob, letter_id, metadata, "Letters/").then((blob_obj) => {
+            this.uploadBlob(blob, letter_id, data.metadata, "Letters/").then((blob_obj) => {
                 letter_ref.set({
                     url: blob_obj.url,
                     id: letter_id,
+                    greeting: data.greeting,
+                    body: data.body,
+                    closing: data.closing,
+                    name: data.name,
+                    email: data.email,
+                    zip_code: data.zip_code,
+                    lat: data.lat,
+                    lng: data.lng,
+                    hospital: data.hospital,
+                    hospitalAddress: data.hospitalAddress,
                     time: firebase.firestore.FieldValue.serverTimestamp()
                     // TODO: add any other data to upload to firebase!!! i.e geolocation data
                 }).then(() => {
