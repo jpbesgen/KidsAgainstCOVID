@@ -6,7 +6,6 @@ import HospitalSearchComponent from '../js/components/HospitalSearchComponent';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
 
 import MailBanner from '../img/mailBanner.png';
 import LetterTemplate from '../img/letterTemplate.png';
@@ -29,8 +28,16 @@ const MailMessage = () => {
 						Remember to include your first name and your letter should include a
 						greeting, body, and closing.
 					</p>
-					<p style={style.Link1}><a href="https://firebasestorage.googleapis.com/v0/b/kidsagainstcovid.appspot.com/o/template1.pdf?alt=media&token=8475777b-32bc-4c2f-a31a-5fff1d0097d2">Template 1.pdf</a></p>
-					<p style={style.Link2}><a href="https://firebasestorage.googleapis.com/v0/b/kidsagainstcovid.appspot.com/o/template2.pdf?alt=media&token=8050925c-3815-4469-92e8-4a5a48941323">Template 2.pdf</a></p>
+					<p style={style.Link1}>
+						<a href="https://firebasestorage.googleapis.com/v0/b/kidsagainstcovid.appspot.com/o/template1.pdf?alt=media&token=8475777b-32bc-4c2f-a31a-5fff1d0097d2">
+							Template 1.pdf
+						</a>
+					</p>
+					<p style={style.Link2}>
+						<a href="https://firebasestorage.googleapis.com/v0/b/kidsagainstcovid.appspot.com/o/template2.pdf?alt=media&token=8050925c-3815-4469-92e8-4a5a48941323">
+							Template 2.pdf
+						</a>
+					</p>
 				</Row>
 			</Container>
 
@@ -44,10 +51,18 @@ const MailMessage = () => {
 			>
 				<Row className="align-items-center justify-content-around">
 					<Col xs={3}>
-						<img src={LetterTemplateText} style={style.ImageInstructions} alt="letter template text" />
+						<img
+							src={LetterTemplateText}
+							style={style.ImageInstructions}
+							alt="letter template text"
+						/>
 					</Col>
 					<Col xs={7}>
-						<img src={LetterTemplate} style={style.ImageLetter} alt="letter template" />
+						<img
+							src={LetterTemplate}
+							style={style.ImageLetter}
+							alt="letter template"
+						/>
 					</Col>
 				</Row>
 			</Container>
