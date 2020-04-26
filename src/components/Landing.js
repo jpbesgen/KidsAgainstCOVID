@@ -14,8 +14,19 @@ import ImageRight from '../img/imageRight.png';
 import DigitalLetter from '../img/digitalLetter.png';
 import MailLetter from '../img/mailLetter.png';
 import VideoLetter from '../img/videoLetter.png';
+import LetterMontage from '../img/letterMontage.png';
 
 const Landing = () => {
+	function setButtonHover(e) {
+		e.target.style.color = '#050442';
+		e.target.style.background = 'transparent';
+	}
+
+	function unsetButtonHover(e) {
+		e.target.style.color = 'white';
+		e.target.style.background = '#050442';
+	}
+
 	return (
 		<div>
 			<Navbar />
@@ -86,82 +97,96 @@ const Landing = () => {
 					className="justify-content-center align-items-center"
 					style={{ padding: ' 0 0 12vh 0' }}
 				>
-					<Link to="/video-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/video-message">
 							<img
 								src={VideoLetter}
 								alt="video letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/mail-letter">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/mail-letter">
 							<img
 								src={MailLetter}
 								alt="mail letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/digital-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/digital-message">
 							<img
 								src={DigitalLetter}
 								alt="digital letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-				</Row>
-			</Container>
-
-			<Container fluid>
-				<Row className="justify-content-center" style={{ padding: '12.5% 0' }}>
-					<Col xs={4}>
-						<Button
-							style={{
-								width: '100%',
-								background: '#000038',
-								fontSize: '24px',
-								padding: '1.5rem 0',
-								borderRadius: '10px',
-							}}
-						>
-							Find A Hospital Near You
-						</Button>
+						</Link>
 					</Col>
 				</Row>
 			</Container>
 
-			<Container
-				fluid
-				style={{ background: '#000038', height: '4vh' }}
-			></Container>
+			<Container fluid>
+				<Row
+					className="justify-content-center"
+					style={{ padding: '6.5% 0 10.2% 0' }}
+				>
+					<Col xs={4}>
+						<Link to="/map">
+							<Button
+								style={{
+									width: '100%',
+									background: '#050442',
+									fontSize: '24px',
+									padding: '1.5rem 0',
+									borderRadius: '10px',
+									border: '2px solid black',
+								}}
+								onMouseEnter={setButtonHover}
+								onMouseLeave={unsetButtonHover}
+							>
+								Find A Hospital Near You
+							</Button>
+						</Link>
+					</Col>
+				</Row>
+				<Row>
+					<Col xs={12} style={{ padding: '0' }}>
+						<img
+							src={LetterMontage}
+							alt="letter montage"
+							style={{ width: '100%' }}
+						/>
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 };
 
 const style = {
 	BannerText: {
-		fontSize: '30px',
+		fontSize: '24px',
 		color: 'white',
 		fontWeight: '700',
 		margin: '2.5vh 0',
 	},
 	BannerTextLight: {
-		fontSize: '24px',
+		fontSize: '20px',
 		color: 'white',
 		fontWeight: '300',
 		margin: '2.5vh 0',
 	},
 	Header3: {
-		fontSize: '30px',
+		fontSize: '24px',
 		fontWeight: '6s00',
 		padding: '4vh 0 2vh 0',
 	},
 	DescriptiveText: {
-		fontSize: '24px',
+		fontSize: '20px',
 		fontWeight: '300',
 		padding: '0 8% 4vh 8%',
 	},
