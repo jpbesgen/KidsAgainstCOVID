@@ -10,7 +10,7 @@ import Landing from './js/components/Landing';
 function App() {
   return (
     <div className="App">
-      <Landing />
+      <LetterTool/>
     </div>
   );
 }

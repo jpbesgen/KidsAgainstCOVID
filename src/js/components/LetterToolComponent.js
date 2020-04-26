@@ -137,7 +137,7 @@ export default class LetterToolComponent extends React.Component {
                         </TabContent>
                     </div>
                     <div style={styles.canvasContainer}>
-                        <Canvas currentTab={activeTab} id="letter-canvas"/>
+                        <Canvas currentTab={activeTab} disabled={uploading} id="letter-canvas"/>
                     </div>
 
                     {previewing ? 

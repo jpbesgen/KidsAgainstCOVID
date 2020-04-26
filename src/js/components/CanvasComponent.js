@@ -32,6 +32,9 @@ export default class CanvasComponent extends React.Component {
     }
 
     handleMouseDown(e) {
+        let { disabled } = this.props;
+        if(disabled) return;
+
         let { currentTab } = this.props;
 
         switch(currentTab) {
@@ -51,14 +54,23 @@ export default class CanvasComponent extends React.Component {
     }
 
     handleMouseMove(e) {
+        let { disabled } = this.props;
+        if(disabled) return;
+
         if(this.isDrawing) this.draw(e.offsetX, e.offsetY);
     }
 
     handleMouseUp(e) {
+        let { disabled } = this.props;
+        if(disabled) return;
+
         this.isDrawing = false;
     }
 
     handleMouseOut(e) {
+        let { disabled } = this.props;
+        if(disabled) return;
+        
         this.isDrawing = false;
         
     }
