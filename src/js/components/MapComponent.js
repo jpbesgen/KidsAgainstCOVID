@@ -73,7 +73,7 @@ export class MapComponent extends React.Component {
         
         let markers = (locations.map((location) => {
             return <Marker
-                key={location[2]}
+                key={location[2] || (location[0]+location[1]).toString()}
                 name={location[3] || "Letter"}
                 onClick={this.onMarkerClick}
                 position={{

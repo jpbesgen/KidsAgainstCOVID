@@ -22,6 +22,13 @@ const Thanks = (props) => {
                 <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
                     <p> <b>Thank you for your submission!</b><br/> You offered to send a note to <b>{props.location.state.name}.<br /></b><br /></p>
                 </Row>
+                { props.location.state != null && props.location.state.url != null ? 
+                    <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
+                        <p> You can download your note <a href={props.location.state.url} target="_blank" download>here.</a><br /></p>
+                    </Row>
+                    :
+                    null
+                }
                 <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
                     <p>
                         <b>The hospital's mailing address is: <br /></b>
