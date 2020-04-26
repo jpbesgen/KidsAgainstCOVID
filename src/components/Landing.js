@@ -86,58 +86,57 @@ const Landing = () => {
 					className="justify-content-center align-items-center"
 					style={{ padding: ' 0 0 12vh 0' }}
 				>
-					<Link to="/video-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/video-message">
 							<img
 								src={VideoLetter}
 								alt="video letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/mail-letter">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/mail-letter">
 							<img
 								src={MailLetter}
 								alt="mail letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/digital-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/digital-message">
 							<img
 								src={DigitalLetter}
 								alt="digital letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
+						</Link>
+					</Col>
 				</Row>
 			</Container>
 
 			<Container fluid>
 				<Row className="justify-content-center" style={{ padding: '12.5% 0' }}>
 					<Col xs={4}>
-						<Button
-							style={{
-								width: '100%',
-								background: '#000038',
-								fontSize: '24px',
-								padding: '1.5rem 0',
-								borderRadius: '10px',
-							}}
-						>
-							Find A Hospital Near You
-						</Button>
+						<Link to="/map">
+							<Button
+								style={{
+									width: '100%',
+									background: '#000038',
+									fontSize: '24px',
+									padding: '1.5rem 0',
+									borderRadius: '10px',
+								}}
+							>
+								Find A Hospital Near You
+							</Button>
+						</Link>
 					</Col>
 				</Row>
 			</Container>
-
-			<Container
-				fluid
-				style={{ background: '#000038', height: '4vh' }}
-			></Container>
 		</div>
 	);
 };

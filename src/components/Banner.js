@@ -16,7 +16,7 @@ const Banner = (props) => {
 						<img
 							src={props.image}
 							alt="covid particle"
-							style={{ height: '331px', marginLeft: '10%' }}
+							style={{ height: '221px', marginLeft: '25%' }}
 						/>
 					</Col>
 				</Row>
@@ -27,7 +27,7 @@ const Banner = (props) => {
 
 const style = {
 	BannerText: {
-		fontSize: '30px',
+		fontSize: '40px',
 		color: 'white',
 		fontWeight: '700',
 		margin: '2.5vh 0',
