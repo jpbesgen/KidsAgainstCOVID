@@ -11,6 +11,11 @@ const SiteNavbar = () => {
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="ml-auto">
 					<Nav.Link>
+						<Link to="/">
+							<p style={style.NavText}>Home</p>
+						</Link>
+					</Nav.Link>
+					<Nav.Link>
 						<Link to="/notes">
 							<p style={style.NavText}>Notes</p>
 						</Link>
