@@ -40,12 +40,13 @@ const Thanks = (props) => {
                     paddingTop: '3vh',
                     width: '90vw',
                     height: '50px',
+                    paddingBottom: "20px",
                 }}
             >
                 <MapComponent />
             </Container>
             <Container>
-                <div style={{ paddingBottom: "20px" }} />
+                <div style={{ marginBottom: "20px" }} />
             </Container>
         </div >
     );

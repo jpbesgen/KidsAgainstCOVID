@@ -10,7 +10,7 @@ const Footer = () => {
 				style={{ height: '4.5vh' }}
 			>
 				<p style={{ color: 'white', margin: '0', fontSize: '15px' }}>
-					Created for hack:now 2020
+					Created with ☕ and ❤️ for hack:now 2020
 				</p>
 			</Row>
 		</Container>

@@ -22,8 +22,6 @@ export default class HospitalCard extends React.Component {
     }
 
     handleMouseOver(event) {
-        // react to mousing over the card
-        console.log("MOUSED OVER");
         
     }
 

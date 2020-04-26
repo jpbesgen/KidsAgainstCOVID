@@ -21,7 +21,7 @@ function App() {
 				<Router>
 					<Landing path="/" />
 					<MapPage path="/map" />
-					<Notes path="/notes" />
+					<Notes path="/give-thanks" />
 					<About path="/about" />
 					<VideoMessage path="/video-message" />
 					<MailMessage path="/mail-letter" />
