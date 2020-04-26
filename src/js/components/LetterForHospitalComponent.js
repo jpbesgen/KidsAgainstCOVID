@@ -86,8 +86,16 @@ export default class LetterForHospitalComponent extends React.Component {
     }
 
     handleCardClicked(event, card_data) {
-        console.log(event);
-        console.log(card_data);
+        let { zip_code, lat, lng } = this.state;
+        this.props.uploadLetter({
+            zip_code,
+            lat,
+            long: lng,
+            address: card_data.address,
+            name: card_data.name,
+        }).then(() => {
+            
+        });
     }
     
 	renderHospitalList() {

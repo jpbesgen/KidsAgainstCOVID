@@ -8,6 +8,8 @@ const mapStyles = {
     height: '50vh'
 };
 
+const google = window.google;
+
 export class MapComponent extends React.Component {
     state = {
         showingInfoWindow: false,

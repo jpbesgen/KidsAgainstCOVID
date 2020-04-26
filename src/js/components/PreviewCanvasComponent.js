@@ -15,12 +15,12 @@ export default class PreviewCanvasComponent extends React.Component {
     }
 
     componentDidUpdate() {
-        let { canvases, drawingTrigger } = this.props;
+        let { canvases } = this.props;
         canvases = canvases.map((c) => document.getElementById(c));
         
         let { ctx, width, height } = this;
 
-        if(drawingTrigger || !drawingTrigger) ctx.clearRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width, height);
 
         // render background
         canvases.forEach((canvas) => {

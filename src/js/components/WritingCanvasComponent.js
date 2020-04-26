@@ -18,7 +18,7 @@ export default class WritingCanvasComponent extends React.Component {
 
     componentDidUpdate() {
         let { canvas, width, height, ctx } = this,
-            { greeting, body, closing } = this.props.writing,
+            { greeting, body, closing, name } = this.props.writing,
             { color, size, family } = this.props.font;
 
         ctx.clearRect(0, 0, width, height);
@@ -27,7 +27,7 @@ export default class WritingCanvasComponent extends React.Component {
         let body_segments = [],
             segment = "",
             threshold = 0,
-            max = width * 1.5;
+            max = width;
         if(body != null) {
             for(let i = 0; i < body.length; i++) {
                 let char = body.charAt(i);
@@ -53,6 +53,7 @@ export default class WritingCanvasComponent extends React.Component {
             }
         }
         if(closing != null) ctx.fillText(closing, offsetX, scaleY * 9);
+        if(name != null) ctx.fillText(name, offsetX, scaleY * 9 + size * 1.5)
     }
 
 

@@ -36,7 +36,7 @@ export default class LetterToolComponent extends React.Component {
             activeTab: '1',
             previewing: false,
             uploading: false,
-            writing: {greeting:"",body:"",closing:""},
+            writing: {greeting:"",body:"",closing:"",name:""},
             font: {color:"red",size:"12",family:"Monospace"},
             canvases: [],
             background: {
@@ -45,7 +45,8 @@ export default class LetterToolComponent extends React.Component {
             drawing: {
                 color: "#000",
                 size: 12,
-            }
+            },
+            continuing: false,
         };
 
         this.uploadLetter = this.uploadLetter.bind(this);
@@ -73,7 +74,8 @@ export default class LetterToolComponent extends React.Component {
     togglePreview() {
         let { previewing } = this.state;
         this.setState({
-            previewing: !previewing
+            previewing: !previewing,
+            continuing: false,
         });
     }
 
@@ -98,7 +100,7 @@ export default class LetterToolComponent extends React.Component {
         });
     }
 
-    continueLetter(lat, long) {
+    continueLetter() {
         this.setState({
             continuing: true,
         });
@@ -162,25 +164,25 @@ export default class LetterToolComponent extends React.Component {
     }
 
     render() {
-        let { activeTab, previewing, uploading, writing, canvases, background, font, drawing } = this.state;
+        let { activeTab, previewing, uploading, writing, canvases, background, font, drawing, continuing } = this.state;
 
         return (
             <div style={styles.biggerContainer}>
                 <div style={styles.writingContainer}>
                     <label><b>Send a local healthcare provider or essential worker a kind note and picture through email. Please fill out the information below, with parent's permission (if under 18).</b></label>
-                    <label>Name</label>
+                    <label>First Name</label>
                     <Input
                         name="name"
                         type="text"
                         placeholder="Add your name here"
-                        onInput={(e) => this.updateName(e.target.value)}
+                        onInput={(e) => this.updateWriting("name", e)}
                     />
                     <label>Email (Optional)</label>
                     <Input
                         name="email"
                         type="email"
                         placeholder="you@example.com"
-                        onInput={(e) => this.updateName(e.target.value)}
+                        onInput={(e) => this.updateWriting("email", e)}
                     />
                     <br/>
                     <label><b>Now add a note and a drawing!</b></label>
@@ -202,12 +204,12 @@ export default class LetterToolComponent extends React.Component {
                     ></textarea>
 
                     <label>Add a closing.</label>
-                    <textarea 
-                        style={styles.closingInput} 
-                        rows="2"
+                    <Input
+                        name="closing"
+                        type="text"
                         placeholder="ex: Sincerely,"
                         onInput={(e) => this.updateWriting("closing", e)}
-                    ></textarea>
+                    />
                 </div>
                 <div style={styles.container}>
                     {/* */}
@@ -315,16 +317,19 @@ export default class LetterToolComponent extends React.Component {
                             color="info"
                             onClick={() => this.togglePreview()}
                         >
-                                {previewing ? "Continue Editing!" : "Preview Letter"}
+                                {previewing ? "Back to Edit" : "Preview Letter"}
                         </Button>
 
                     </div>
                 </div>
 
-                {this.continuing ? 
-                    <LetterForHospital
-                        uploadLetter = {this.uploadLetter}
-                    />
+                {continuing ? 
+                    <div style={styles.hospitalComponent}>
+                        
+                        <LetterForHospital
+                            uploadLetter = {this.uploadLetter}
+                        />
+                    </div>
                     :
                     null
                 }
@@ -334,6 +339,10 @@ export default class LetterToolComponent extends React.Component {
 }
 
 const styles = {
+    hospitalComponent: {
+        height: "110vh",
+        width: "90vw",
+    },
     biggerContainer: {
         display: "flex",
         flexDirection: "column",

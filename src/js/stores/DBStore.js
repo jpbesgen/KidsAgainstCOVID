@@ -36,11 +36,11 @@ class DBStore extends EventEmitter {
         })
     }
 
-    async uploadLetter(blob, metadata) {
+    async uploadLetter(blob, data) {
         return new Promise((resolve, reject) => {
             let letter_ref = db.collection("Letters").doc(),
                 letter_id = letter_ref.id;
-            this.uploadBlob(blob, letter_id, metadata, "Letters/").then((blob_obj) => {
+            this.uploadBlob(blob, letter_id, data.metadata, "Letters/").then((blob_obj) => {
                 letter_ref.set({
                     url: blob_obj.url,
                     id: letter_id,
