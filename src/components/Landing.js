@@ -33,7 +33,7 @@ const Landing = () => {
 			<Container fluid style={{ background: '#000038', paddingLeft: '5%' }}>
 				<Row className="align-items-center">
 					<Col xs={6}>
-						<p style={style.BannerText}>COVID-19 HAS PUT UP A GOOD FIGHT</p>
+						<p style={style.BannerText}><b>COVID-19 HAS PUT UP A GOOD FIGHT</b></p>
 						<p style={style.BannerTextLight}>
 							Propoganda and stuff kinda like cheese n' stuff except u cant eat
 							it
@@ -129,7 +129,7 @@ const Landing = () => {
 				</Row>
 			</Container>
 
-			<Container fluid>
+			{/* <Container fluid>
 				<Row
 					className="justify-content-center"
 					style={{ padding: '6.5% 0 10.2% 0' }}
@@ -162,7 +162,7 @@ const Landing = () => {
 						/>
 					</Col>
 				</Row>
-			</Container>
+			</Container> */}
 		</div>
 	);
 };

@@ -77,7 +77,7 @@ export default class HospitalSearchComponent extends React.Component {
         return (
             <div>
                 <p style={style.DescriptiveText}>
-                    Here are the 5 hospitals closest to you.
+                    Here are the {this.state.hospitals != undefined && this.state.hospitals.length > 4 ? 5 : this.state.hospitals.length} hospitals closest to you.
                 </p>
                 <p style={style.EnterAddressText}>
                     Please choose one to send your message to.

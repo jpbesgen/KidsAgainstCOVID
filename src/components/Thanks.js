@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import HospitalSearchComponent from '../js/components/HospitalSearchComponent';
 import MapComponent from '../js/components/MapComponent';
+import Banner from './Banner';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +11,7 @@ const Thanks = (props) => {
     return (
         <div>
             <Navbar />
+            <Banner text='Thank you' />
             <Container
                 fluid
                 style={{
@@ -17,7 +19,7 @@ const Thanks = (props) => {
                     paddingTop: '3vh',
                 }}
             >
-                <Row className="justify-content-center">
+                <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
                     <h3 style={style.Header3}>
                         Thanks for your submission!! Look at where our letters have come from!
 					</h3>
@@ -26,25 +28,28 @@ const Thanks = (props) => {
                     <p> You offered to send a note to <b>{props.location.state.name}.<br /></b><br /></p>
                 </Row>
                 <Row className="justify-content-left" style={{ paddingLeft: "10%" }}>
-                <p>
-                    <b>The hospital's mailing address is: <br /></b>
-                    {props.location.state.name} <br />
-                    {props.location.state.address}
-                </p>
+                    <p>
+                        <b>The hospital's mailing address is: <br /></b>
+                        {props.location.state.name} <br />
+                        {props.location.state.address}
+                    </p>
                 </Row>
-			</Container>
-        <Container
-            style={{
-                paddingTop: '3vh',
-                paddingBottom: '3vh',
-                width: '90vw',
-                height: '50px',
-            }}
-        >
-            <MapComponent />
-        </Container>
-		</div >
-	);
+            </Container>
+            <Container
+                style={{
+                    paddingTop: '3vh',
+                    width: '90vw',
+                    height: '50px',
+                    paddingBottom: "20px",
+                }}
+            >
+                <MapComponent />
+            </Container>
+            <Container>
+                <div style={{ marginBottom: "20px" }} />
+            </Container>
+        </div >
+    );
 };
 
 const style = {
@@ -55,7 +60,7 @@ const style = {
         margin: '2.5vh 0',
     },
     Header3: {
-        fontSize: '30px',
+        fontSize: '24px',
         fontWeight: '6s00',
         padding: '0 0 2vh 0',
     },

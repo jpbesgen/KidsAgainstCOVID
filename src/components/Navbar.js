@@ -14,8 +14,8 @@ const SiteNavbar = () => {
 						<p style={style.NavText}>Home</p>
 					</Link>
 
-					<Link to="/notes">
-						<p style={style.NavText}>Notes</p>
+					<Link to="/give-thanks">
+						<p style={style.NavText}>Give Thanks</p>
 					</Link>
 
 					<Link to="/map">
