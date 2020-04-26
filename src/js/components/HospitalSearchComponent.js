@@ -1,6 +1,9 @@
 import React from "react";
 
 import HospitalCard from './HospitalCard';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import axios from 'axios';
 import Autocomplete from 'react-google-autocomplete';
 
@@ -43,10 +46,17 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     renderHospitalSearchResults() {
+        const top5 = this.renderHospitalList();
 		return (
 			<div className="hospital_search_results">
 				<div> Hospitals in need in your area </div>
-				{ this.renderHospitalList() }
+                <Row>
+                    <Col>{ top5[0] }</Col>
+                    <Col >{ top5[1] }</Col>
+                    <Col >{ top5[2] }</Col>
+                    <Col >{ top5[3] }</Col>
+                    {/* <Col >{ top5[4] }</Col> */}
+                </Row>
 			</div>
 		)
     }
