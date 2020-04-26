@@ -31,7 +31,7 @@ export default class LetterToolComponent extends React.Component {
             previewing: false,
             uploading: false,
             writing: {},
-            canvases: {}
+            canvases: []
         };
 
         this.uploadLetter = this.uploadLetter.bind(this);
@@ -182,6 +182,7 @@ export default class LetterToolComponent extends React.Component {
                             canvases={canvases}
                             hidden={!previewing}
                             disabled={uploading} 
+                            id="preview-canvas"
                         />
                         
                     </div>

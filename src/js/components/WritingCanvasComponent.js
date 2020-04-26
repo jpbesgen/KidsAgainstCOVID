@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class CanvasComponent extends React.Component {
+export default class WritingCanvasComponent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,20 +25,23 @@ export default class CanvasComponent extends React.Component {
 
         ctx.clearRect(0, 0, width, height);
 
+
         let body_segments = [],
             segment = "",
             threshold = 0,
             max = width * 1.5;
-        for(let i = 0; i < body.length; i++) {
-            let char = body.charAt(i);
-            segment += char;
-            if(i * size > threshold + max && char == " ") { 
-                threshold += max;
-                body_segments.push(segment);
-                segment = "";
+        if(body != null) {
+            for(let i = 0; i < body.length; i++) {
+                let char = body.charAt(i);
+                segment += char;
+                if(i * size > threshold + max && char == " ") { 
+                    threshold += max;
+                    body_segments.push(segment);
+                    segment = "";
+                }
             }
+            if(segment.length > 0) body_segments.push(segment);
         }
-        if(segment.length > 0) body_segments.push(segment);
 
         let offsetX = width / 20,
             scaleY = height / 10;
