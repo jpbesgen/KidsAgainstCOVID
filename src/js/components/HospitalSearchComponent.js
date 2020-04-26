@@ -103,7 +103,10 @@ export default class HospitalSearchComponent extends React.Component {
             <>
             <div>
                 <p style={style.DescriptiveText}>
-                    Enter your address to find a hospital fighting COVID-19 near you.
+                    Let's find a hospital fighting COVID-19 near you so you can send your message.
+                </p>
+                <p style={style.EnterAddressText}>
+                    Enter your address:
                 </p>
                 <Autocomplete
                     style={{width: '90%'}}
@@ -141,7 +144,7 @@ const style = {
 
     },
     EnterAddressText: {
-		fontSize: '20px',
+		fontSize: '18px',
 		fontWeight: 'bold',
 		padding: '1vh 0 0 0',
         margin: '0',
