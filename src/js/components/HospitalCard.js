@@ -35,7 +35,7 @@ export default class HospitalCard extends React.Component {
 const style = {
     HospitalCard: {
         padding: '10px',
-        width: '200px',
+        width: '190px',
         height: '250px',
         margin: '10px auto',
         backgroundColor: '#fff',
