@@ -94,11 +94,12 @@ export default class LetterForHospitalComponent extends React.Component {
             lng: lng,
             hospitalAddress: card_data.address,
             hospital: card_data.name
-        }).then(() => {
+        }).then((data) => {
             navigate("/thanks", {state: {
                 name: card_data.name,
                 address: card_data.address,
-            }})
+                url: data.url,
+            }});
         });
     }
     

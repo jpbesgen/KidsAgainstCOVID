@@ -101,9 +101,9 @@ export default class LetterToolComponent extends React.Component {
         return new Promise((resolve, reject) => {
             canvas.toBlob((blob) => {
 
-                db.uploadLetter(blob, data).then(() => {
+                db.uploadLetter(blob, data).then((data) => {
                     this.uploadSuccess()
-                    resolve();
+                    resolve(data);
                 }).catch((error) => {
                     console.log(error);
                     this.uploadError();

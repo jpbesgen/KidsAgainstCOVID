@@ -60,7 +60,7 @@ class DBStore extends EventEmitter {
                     time: firebase.firestore.FieldValue.serverTimestamp()
                     // TODO: add any other data to upload to firebase!!! i.e geolocation data
                 }).then(() => {
-                    resolve();
+                    resolve({ url: blob_obj.url });
                 });
             }).catch((error) => {
                 reject(error);
