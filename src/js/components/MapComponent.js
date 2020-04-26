@@ -60,25 +60,28 @@ export class MapComponent extends React.Component {
     };
 
     renderMarkers() {
-        // const locations = [[39.82, -98.5795], [36.823, -95.5795], [31.832, -106.391], [32.767, -96.778],
-        // [40.714, -74.012], [40.724, -74.122], [34.032, -119.134],
-        // [37.232, -121.791], [32.644, -117.138], [42.339, -71.054]];
+        const hards = [[39.82, -98.5795], [36.823, -95.5795], [31.832, -106.391], [32.767, -96.778],
+        [40.714, -74.012], [40.724, -74.122], [34.032, -119.134],
+        [37.232, -121.791], [32.644, -117.138], [42.339, -71.054]];
         let letters = db.getLetters();
         let locations = letters.map((l) => [l.lat, l.lng, l.url, l.hospital]);
-        
+        hards.forEach((hard) => {
+            locations.push(hard);
+        });
+
         console.log(locations);
         
         let markers = (locations.map((location) => {
             return <Marker
                 key={location[2]}
-                name={location[3]}
+                name={location[3] || "Letter"}
                 onClick={this.onMarkerClick}
                 position={{
                     lat: location[0],
                     lng: location[1],
                 }}
                 icon={{
-                    url: location[2],
+                    url: location[2] || "https://firebasestorage.googleapis.com/v0/b/kidsagainstcovid.appspot.com/o/1200px-Heart_corazo%CC%81n.svg.png?alt=media&token=29bc3b70-f26e-4c32-8510-36265854631c",
                     anchor: new google.maps.Point(32, 32),
                     scaledSize: new google.maps.Size(24, 24)
                 }}
