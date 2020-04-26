@@ -16,6 +16,12 @@ export default class BackgroundCanvasComponent extends React.Component {
     }
 
  
+    componentDidUpdate() {
+        let { background } = this.props;
+
+        this.ctx.fillStyle = background.color;
+        this.ctx.fillRect(0, 0, this.width, this.height);
+    }
 
 
 
@@ -30,9 +36,14 @@ export default class BackgroundCanvasComponent extends React.Component {
 
 let styles = {
     canvas: {
-        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)"
+        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)",
+        opacity: "0",
+        position: "absolute",
     },
     hidden: {
         display: "none"
+    },
+    invisible: {
+        opacity: "0"
     }
 };

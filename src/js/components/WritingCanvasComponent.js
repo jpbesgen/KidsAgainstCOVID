@@ -21,8 +21,6 @@ export default class WritingCanvasComponent extends React.Component {
             { greeting, body, closing } = this.props.writing,
             { color, size, family } = this.props.font;
 
-        console.log(this.props);
-
         ctx.clearRect(0, 0, width, height);
 
 
@@ -69,9 +67,14 @@ export default class WritingCanvasComponent extends React.Component {
 
 let styles = {
     canvas: {
-        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)"
+        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)",
+        opacity: "0",
+        position: "absolute",
     },
     hidden: {
         display: "none"
+    },
+    invisible: {
+        opacity: "0"
     }
 };

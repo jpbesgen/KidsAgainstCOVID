@@ -15,16 +15,17 @@ export default class PreviewCanvasComponent extends React.Component {
     }
 
     componentDidUpdate() {
-        let { canvases } = this.props;
-        canvases = canvases.map((c) => { return {c:document.getElementById(c)}});
+        let { canvases, drawingTrigger } = this.props;
+        canvases = canvases.map((c) => document.getElementById(c));
         
-        let { ctx } = this;
+        let { ctx, width, height } = this;
+
+        if(drawingTrigger || !drawingTrigger) ctx.clearRect(0, 0, width, height);
 
         // render background
-        // render drawing
-
-        // render text
-
+        canvases.forEach((canvas) => {
+            if(canvas != null) ctx.drawImage(canvas, 0, 0);
+        });
 
     }
 
@@ -39,7 +40,8 @@ export default class PreviewCanvasComponent extends React.Component {
 
 let styles = {
     canvas: {
-        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)"
+        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)",
+        position: "absolute",
     },
     hidden: {
         display: "none"

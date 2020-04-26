@@ -13,12 +13,16 @@
     "firebase": "^7.14.2",
     "qs": "^6.9.3",
     "react": "^16.13.1",
-    "react-color": "^2.18.0",
     "react-bootstrap": "^1.0.1",
+    "react-color": "^2.18.0",
     "react-dom": "^16.13.1",
     "react-google-autocomplete": "^1.1.4",
     "react-scripts": "3.4.1",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "catenary-curve": "^1.0.1",
+    "lazy-brush": "^1.0.1",
+    "prop-types": "^15.6.2",
+    "resize-observer-polyfill": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
