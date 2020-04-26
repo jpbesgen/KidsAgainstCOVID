@@ -10,7 +10,7 @@ const VideoMessage = () => {
 	return (
 		<div>
 			<Navbar />
-			<Banner text="create a digital message" />
+			<Banner text="send a video message" />
 		</div>
 	);
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 import { Link } from '@reach/router';
 
 import Container from 'react-bootstrap/Container';
@@ -12,35 +13,57 @@ import VideoLetter from '../img/videoLetter.png';
 const Banner = (props) => {
 	return (
 		<div>
-			<Container fluid>
-				<Row className="justify-content-center align-items-center">
-					<Link to="/video-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+			<Navbar />
+			<Container
+				fluid
+				style={{
+					borderTop: '2px solid #000038',
+					paddingTop: '3vh',
+				}}
+			>
+				<Row className="justify-content-center">
+					<h3 style={style.Header3}>Let's Give Thanks</h3>
+				</Row>
+				<Row className="justify-content-center text-center">
+					<p style={style.DescriptiveText}>
+						It’s our time to give our thanks to these brave men and women and
+						show our appreciation and for their heroic efforts fighting the
+						pandemic and keeping us safe.
+					</p>
+				</Row>
+				<Row
+					className="justify-content-center align-items-center"
+					style={{ padding: ' 0 0 12vh 0' }}
+				>
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/video-message">
 							<img
 								src={VideoLetter}
 								alt="video letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/mail-letter">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/mail-letter">
 							<img
 								src={MailLetter}
 								alt="mail letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
-					<Link to="/digital-message">
-						<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						</Link>
+					</Col>
+
+					<Col xs={3} style={{ padding: '0', margin: '0 1.5%' }}>
+						<Link to="/digital-message">
 							<img
 								src={DigitalLetter}
 								alt="digital letter"
 								style={{ width: '100%' }}
 							/>
-						</Col>
-					</Link>
+						</Link>
+					</Col>
 				</Row>
 			</Container>
 		</div>
@@ -53,6 +76,16 @@ const style = {
 		color: 'white',
 		fontWeight: '700',
 		margin: '2.5vh 0',
+	},
+	Header3: {
+		fontSize: '30px',
+		fontWeight: '6s00',
+		padding: '0 0 2vh 0',
+	},
+	DescriptiveText: {
+		fontSize: '24px',
+		fontWeight: '300',
+		padding: '0 8% 4vh 8%',
 	},
 };
 
