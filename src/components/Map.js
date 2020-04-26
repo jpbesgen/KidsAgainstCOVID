@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import HospitalSearchComponent from '../js/components/HospitalSearchComponent';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -20,6 +21,9 @@ const Map = () => {
 						Look at where our letters have come from!
 					</h3>
 				</Row>
+			</Container>
+			<Container>
+				<HospitalSearchComponent />
 			</Container>
 		</div>
 	);

@@ -8,6 +8,7 @@ import About from './components/About';
 import VideoMessage from './components/VideoMessage';
 import MailMessage from './components/MailMessage';
 import DigitalMessage from './components/DigitalMessage';
+import HospitalSearchComponent from './js/components/HospitalSearchComponent';
 import Footer from './components/Footer';
 
 import './App.css';
@@ -24,6 +25,7 @@ function App() {
 					<VideoMessage path="/video-message" />
 					<MailMessage path="/mail-letter" />
 					<DigitalMessage path="/digital-message" />
+          <HospitalSearchComponent path="search" />
 				</Router>
 			</div>
 			<Footer />
