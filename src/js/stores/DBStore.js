@@ -9,7 +9,10 @@ class DBStore extends EventEmitter {
     constructor() {
         super();
 
+        this.letters = [];
 
+        this.listenForLetters = this.listenForLetters.bind(this);
+        this.listenForLetters();
     }
 
     async uploadBlob(blob, blob_name, metadata, path) {
@@ -63,6 +66,21 @@ class DBStore extends EventEmitter {
                 reject(error);
             });
         });
+    }
+
+    listenForLetters() {
+        db.collection("Letters").onSnapshot((snapshots) => {
+            this.letters = [];
+            snapshots.forEach((snapshot) => {
+                let doc = snapshot.data();
+                this.letters.push(doc);
+            });
+            this.emit("LettersUpdated", this.letters);
+        })
+    }
+
+    getLetters() {
+        return this.letters;
     }
 
 }
