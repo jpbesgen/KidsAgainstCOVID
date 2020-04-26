@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Banner from './Banner';
+import HospitalSearchComponent from '../js/components/HospitalSearchComponent';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -43,21 +44,17 @@ const MailMessage = () => {
 			>
 				<Row className="align-items-center justify-content-around">
 					<Col xs={3}>
-						<img src={LetterTemplateText} alt="letter template text" />
+						<img src={LetterTemplateText} style={style.ImageInstructions} alt="letter template text" />
 					</Col>
 					<Col xs={7}>
-						<img src={LetterTemplate} alt="letter template" />
+						<img src={LetterTemplate} style={style.ImageLetter} alt="letter template" />
 					</Col>
 				</Row>
 			</Container>
 
 			<Container fluid style={{ padding: '4vh 0 5vh 6%' }}>
 				<Row style={{ display: 'flex', flexDirection: 'column' }}>
-					<p style={style.DescriptiveText}>
-						Let’s find a hospital fighting COVID-19 near you so you can send
-						your message.
-					</p>
-					<Form style={{ width: '80%' }}>
+					{/* <Form style={{ width: '80%' }}>
 						<Form.Group controlId="address">
 							<Form.Label style={style.FormText}>Enter your address</Form.Label>
 							<Form.Control
@@ -65,7 +62,8 @@ const MailMessage = () => {
 								placeholder="1234 street lane, townsville, CA 12345"
 							/>
 						</Form.Group>
-					</Form>
+					</Form> */}
+					<HospitalSearchComponent />
 				</Row>
 			</Container>
 		</div>
@@ -73,30 +71,30 @@ const MailMessage = () => {
 };
 
 const style = {
-	DescriptiveText: {
-		fontSize: '24px',
-		fontWeight: '300',
-		padding: '2vh 0 0 0',
-		margin: '0',
-	},
 	Link1: {
-		fontSize: '24px',
+		fontSize: '20px',
 		fontWeight: '300',
 		padding: '6vh 0 0 0',
 		margin: '0',
 	},
 	Link2: {
-		fontSize: '24px',
+		fontSize: '20px',
 		fontWeight: '300',
 		padding: '4vh 0 0 0',
 		margin: '0',
 	},
 	FormText: {
-		fontSize: '24px',
+		fontSize: '20px',
 		fontWeight: '600',
 		padding: '3.5vh 0 1.2vh 0',
 		margin: '0',
 	},
+	ImageInstructions: {
+		width: '250px',
+	},
+	ImageLetter: {
+		width: '60vw',
+	}
 };
 
 export default MailMessage;

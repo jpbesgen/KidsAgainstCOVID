@@ -63,7 +63,13 @@ export default class HospitalSearchComponent extends React.Component {
         return (
             <>
             <div>
-                Brother may I have some oats.
+                <p style={style.DescriptiveText}>
+                    Let’s find a hospital fighting COVID-19 near you so you can send
+                    your message.
+                </p>
+                <p style={style.EnterAddressText}>
+                    Enter your address:
+                </p>
                 <Autocomplete
                     style={{width: '90%'}}
                     onPlaceSelected={(place) => {
@@ -81,4 +87,26 @@ export default class HospitalSearchComponent extends React.Component {
             </>
         );
     }
+}
+
+const style = {
+    DescriptiveText: {
+		fontSize: '20px',
+		fontWeight: 'normal',
+		padding: '1vh 0 1vh 0',
+        margin: '0',
+        color: '#050442',
+        fontFamily: 'Karla',
+        fontStyle: 'normal',
+
+    },
+    EnterAddressText: {
+		fontSize: '20px',
+		fontWeight: 'bold',
+		padding: '1vh 0 0 0',
+        margin: '0',
+        color: '#050442',
+        fontFamily: 'Karla',
+        fontStyle: 'bold',
+	},
 }
