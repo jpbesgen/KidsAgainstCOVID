@@ -8,7 +8,7 @@ import axios from 'axios';
 import Autocomplete from 'react-google-autocomplete';
 import { navigate } from "@reach/router"
 
-export default class HospitalSearchComponent extends React.Component {
+export default class LetterForHospitalComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -87,11 +87,19 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     handleCardClicked(event, card_data) {
-        
-        navigate("/thanks", {state: {
-            name: card_data.name,
-            address: card_data.address,
-        }})
+        let { zip_code, lat, lng } = this.state;
+        this.props.uploadLetter({
+            zip_code,
+            lat,
+            lng: lng,
+            hospitalAddress: card_data.address,
+            hospital: card_data.name
+        }).then(() => {
+            navigate("/thanks", {state: {
+                name: card_data.name,
+                address: card_data.address,
+            }})
+        });
     }
     
 	renderHospitalList() {
@@ -107,10 +115,7 @@ export default class HospitalSearchComponent extends React.Component {
             <>
             <div>
                 <p style={style.DescriptiveText}>
-                    Let's find a hospital fighting COVID-19 near you so you can send your message.
-                </p>
-                <p style={style.EnterAddressText}>
-                    Enter your address:
+                    Enter your address to find a hospital fighting COVID-19 near you.
                 </p>
                 <Autocomplete
                     style={{width: '90%'}}
@@ -127,7 +132,6 @@ export default class HospitalSearchComponent extends React.Component {
                     types={['address']}
                     componentRestrictions={{country: "us"}}
                 />
-                { this.state.hospitals.length == 0 && <div style={{ padding: '40px 0'}}/> }
                 {/* <p>Zip Code: {this.state.zip_code ? JSON.stringify(this.state.zip_code) : "HI"}</p> */}
             </div>
             { this.state.hospitals.length != 0 && this.renderHospitalSearchResultsText() }
@@ -149,7 +153,7 @@ const style = {
 
     },
     EnterAddressText: {
-		fontSize: '18px',
+		fontSize: '20px',
 		fontWeight: 'bold',
 		padding: '1vh 0 0 0',
         margin: '0',

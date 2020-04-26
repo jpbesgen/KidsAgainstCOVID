@@ -81,14 +81,6 @@ export default class FillInCanvasComponent extends React.Component {
     }
 
     render() {
-        // render background
-
-        // render drawing
-
-        // render text
-    }
-
-    render() {
         return (
             <canvas style={this.props.hidden ? styles.hidden : styles.canvas} id={this.props.id}>
                 
@@ -99,9 +91,14 @@ export default class FillInCanvasComponent extends React.Component {
 
 let styles = {
     canvas: {
-        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)"
+        boxShadow: "3px 3px 5px 2px rgba(40, 40, 40, 0.4)",
+        opacity: "0",
+        position: "absolute"
     },
     hidden: {
         display: "none"
+    },
+    invisible: {
+        opacity: "0"
     }
 };
