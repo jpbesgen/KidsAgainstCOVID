@@ -14,8 +14,19 @@ import ImageRight from '../img/imageRight.png';
 import DigitalLetter from '../img/digitalLetter.png';
 import MailLetter from '../img/mailLetter.png';
 import VideoLetter from '../img/videoLetter.png';
+import LetterMontage from '../img/letterMontage.png';
 
 const Landing = () => {
+	function setButtonHover(e) {
+		e.target.style.color = '#050442';
+		e.target.style.background = 'transparent';
+	}
+
+	function unsetButtonHover(e) {
+		e.target.style.color = 'white';
+		e.target.style.background = '#050442';
+	}
+
 	return (
 		<div>
 			<Navbar />
@@ -119,21 +130,36 @@ const Landing = () => {
 			</Container>
 
 			<Container fluid>
-				<Row className="justify-content-center" style={{ padding: '12.5% 0' }}>
+				<Row
+					className="justify-content-center"
+					style={{ padding: '6.5% 0 10.2% 0' }}
+				>
 					<Col xs={4}>
 						<Link to="/map">
 							<Button
 								style={{
 									width: '100%',
-									background: '#000038',
+									background: '#050442',
 									fontSize: '24px',
 									padding: '1.5rem 0',
 									borderRadius: '10px',
+									border: '2px solid black',
 								}}
+								onMouseEnter={setButtonHover}
+								onMouseLeave={unsetButtonHover}
 							>
 								Find A Hospital Near You
 							</Button>
 						</Link>
+					</Col>
+				</Row>
+				<Row>
+					<Col xs={12} style={{ padding: '0' }}>
+						<img
+							src={LetterMontage}
+							alt="letter montage"
+							style={{ width: '100%' }}
+						/>
 					</Col>
 				</Row>
 			</Container>

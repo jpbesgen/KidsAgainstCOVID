@@ -10,26 +10,21 @@ const SiteNavbar = () => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="ml-auto">
-					<Nav.Link>
-						<Link to="/">
-							<p style={style.NavText}>Home</p>
-						</Link>
-					</Nav.Link>
-					<Nav.Link>
-						<Link to="/notes">
-							<p style={style.NavText}>Notes</p>
-						</Link>
-					</Nav.Link>
-					<Nav.Link>
-						<Link to="/map">
-							<p style={style.NavText}>Map</p>
-						</Link>
-					</Nav.Link>
-					<Nav.Link>
-						<Link to="/about">
-							<p style={style.NavText}>About</p>
-						</Link>
-					</Nav.Link>
+					<Link to="/">
+						<p style={style.NavText}>Home</p>
+					</Link>
+
+					<Link to="/notes">
+						<p style={style.NavText}>Notes</p>
+					</Link>
+
+					<Link to="/map">
+						<p style={style.NavText}>Map</p>
+					</Link>
+
+					<Link to="/about">
+						<p style={style.NavText}>About</p>
+					</Link>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
@@ -41,7 +36,7 @@ let style = {
 		fontSize: '22px',
 		color: 'black',
 		fontWeight: '600',
-		margin: '1vh 25px 1vh 15px',
+		margin: '2vh 25px 2vh 15px',
 	},
 };
 
