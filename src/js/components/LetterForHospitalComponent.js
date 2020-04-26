@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 import Autocomplete from 'react-google-autocomplete';
+import { navigate } from "@reach/router"
 
 export default class LetterForHospitalComponent extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class LetterForHospitalComponent extends React.Component {
     }
 
     getLatAndLongFromGooglePlace(place) {
-        return [place.geometry.location.lat, place.geometry.location.lng];
+        return [place.geometry.location.lat(), place.geometry.location.lng()];
     }
 
     getClosestHospitals() {
@@ -90,11 +91,14 @@ export default class LetterForHospitalComponent extends React.Component {
         this.props.uploadLetter({
             zip_code,
             lat,
-            long: lng,
-            address: card_data.address,
-            name: card_data.name,
+            lng: lng,
+            hospitalAddress: card_data.address,
+            hospital: card_data.name
         }).then(() => {
-            
+            navigate("/thanks", {state: {
+                name: card_data.name,
+                address: card_data.address,
+            }})
         });
     }
     

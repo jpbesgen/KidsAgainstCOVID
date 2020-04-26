@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 import axios from 'axios';
 import Autocomplete from 'react-google-autocomplete';
+import { navigate } from "@reach/router"
 
 export default class HospitalSearchComponent extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     getLatAndLongFromGooglePlace(place) {
-        return [place.geometry.location.lat, place.geometry.location.lng];
+        return [place.geometry.location.lat(), place.geometry.location.lng()];
     }
 
     getClosestHospitals() {
@@ -86,8 +87,11 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     handleCardClicked(event, card_data) {
-        console.log(event);
-        console.log(card_data);
+        
+        navigate("/thanks", {state: {
+            name: card_data.name,
+            address: card_data.address,
+        }})
     }
     
 	renderHospitalList() {

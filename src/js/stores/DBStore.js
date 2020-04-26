@@ -44,6 +44,16 @@ class DBStore extends EventEmitter {
                 letter_ref.set({
                     url: blob_obj.url,
                     id: letter_id,
+                    greeting: data.greeting,
+                    body: data.body,
+                    closing: data.closing,
+                    name: data.name,
+                    email: data.email,
+                    zip_code: data.zip_code,
+                    lat: data.lat,
+                    lng: data.lng,
+                    hospital: data.hospital,
+                    hospitalAddress: data.hospitalAddress,
                     time: firebase.firestore.FieldValue.serverTimestamp()
                     // TODO: add any other data to upload to firebase!!! i.e geolocation data
                 }).then(() => {

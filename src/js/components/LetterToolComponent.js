@@ -36,7 +36,7 @@ export default class LetterToolComponent extends React.Component {
             activeTab: '1',
             previewing: false,
             uploading: false,
-            writing: {greeting:"",body:"",closing:"",name:""},
+            writing: {greeting:"",body:"",closing:"",name:"",email:""},
             font: {color:"red",size:"12",family:"Monospace"},
             canvases: [],
             background: {
@@ -79,23 +79,36 @@ export default class LetterToolComponent extends React.Component {
         });
     }
 
-    uploadLetter() {
+    async uploadLetter(data) {
         this.setState({
             uploading: true,
         });
 
+        let { name, email, greeting, body, closing } = this.state.writing;
+
         // create blob
         let canvas = document.getElementById("preview-canvas");
 
-        canvas.toBlob((blob) => {
-            let metadata = {
-                contentType: "image/jpeg"
-            };
-            db.uploadLetter(blob, metadata).then(() => {
-                this.uploadSuccess()
-            }).catch((error) => {
-                console.log(error);
-                this.uploadError();
+        data.metadata = {
+            contentType: "image/jpeg"
+        };
+        data.name = name;
+        data.email = email;
+        data.greeting = greeting;
+        data.body = body;
+        data.closing = closing;
+
+        return new Promise((resolve, reject) => {
+            canvas.toBlob((blob) => {
+
+                db.uploadLetter(blob, data).then(() => {
+                    this.uploadSuccess()
+                    resolve();
+                }).catch((error) => {
+                    console.log(error);
+                    this.uploadError();
+                    reject(error);
+                });
             });
         });
     }
