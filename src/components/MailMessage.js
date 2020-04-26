@@ -39,7 +39,7 @@ const MailMessage = () => {
 				style={{
 					borderTop: '1px solid #000038',
 					borderBottom: '1px solid #000038',
-					padding: '10% 0',
+					padding: '10px 0',
 				}}
 			>
 				<Row className="align-items-center justify-content-around">
@@ -73,20 +73,20 @@ const MailMessage = () => {
 const style = {
 	Link1: {
 		fontSize: '20px',
-		fontWeight: '300',
-		padding: '6vh 0 0 0',
+		fontWeight: 'bold',
+		padding: '3vh 0 0 0',
 		margin: '0',
 	},
 	Link2: {
 		fontSize: '20px',
-		fontWeight: '300',
-		padding: '4vh 0 0 0',
+		fontWeight: 'bold',
+		padding: '2vh 0 0 0',
 		margin: '0',
 	},
 	FormText: {
 		fontSize: '20px',
 		fontWeight: '600',
-		padding: '3.5vh 0 1.2vh 0',
+		padding: '1.5vh 0 0.6vh 0',
 		margin: '0',
 	},
 	ImageInstructions: {
@@ -94,7 +94,12 @@ const style = {
 	},
 	ImageLetter: {
 		width: '60vw',
-	}
+	},
+	DescriptiveText: {
+		fontSize: '20px',
+		fontWeight: '300',
+		padding: '0 0 0 0',
+	},
 };
 
 export default MailMessage;

@@ -12,6 +12,8 @@ export default class HospitalSearchComponent extends React.Component {
         super(props);
         this.state = {
             zip_code: "",
+            lat: "",
+            lng: "",
             hospitals: [],
         }
 
@@ -28,6 +30,10 @@ export default class HospitalSearchComponent extends React.Component {
     getZipCodeFromGooglePlace(place) {
         let obj = place.address_components.find(obj => obj.types.includes("postal_code"));
         return obj.long_name;
+    }
+
+    getLatAndLongFromGooglePlace(place) {
+        return [place.geometry.location.lat, place.geometry.location.lng];
     }
 
     getClosestHospitals() {
@@ -65,6 +71,8 @@ export default class HospitalSearchComponent extends React.Component {
     }
 
     renderHospitalSearchResultsText() {
+        console.log('rendering');
+        console.log('Hospital list', this.state.hospitals);
         return (
             <div>
                 <p style={style.DescriptiveText}>
@@ -76,7 +84,7 @@ export default class HospitalSearchComponent extends React.Component {
             </div>
         )
     }
-    
+
     handleCardClicked(event, card_data) {
         console.log(event);
         console.log(card_data);
@@ -101,7 +109,11 @@ export default class HospitalSearchComponent extends React.Component {
                     style={{width: '90%'}}
                     onPlaceSelected={(place) => {
                         console.log(place);
-                        this.setState({zip_code: this.getZipCodeFromGooglePlace(place)})
+                        this.setState({
+                            zip_code: this.getZipCodeFromGooglePlace(place),
+                            lat: this.getLatAndLongFromGooglePlace(place)[0],
+                            lng: this.getLatAndLongFromGooglePlace(place)[1],
+                        })
                         this.getClosestHospitals();
                     }}
 
@@ -110,8 +122,8 @@ export default class HospitalSearchComponent extends React.Component {
                 />
                 {/* <p>Zip Code: {this.state.zip_code ? JSON.stringify(this.state.zip_code) : "HI"}</p> */}
             </div>
-            { this.state.hospitals && this.renderHospitalSearchResultsText() }
-            { this.state.hospitals && this.renderHospitalSearchResults() }
+            { this.state.hospitals.length != 0 && this.renderHospitalSearchResultsText() }
+            { this.state.hospitals.length != 0 && this.renderHospitalSearchResults() }
             </>
         );
     }

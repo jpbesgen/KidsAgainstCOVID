@@ -14,6 +14,7 @@ export default class HospitalCard extends React.Component {
     }
 
     handleClick(event) {
+        console.log("CLICKED")
         this.props.cardClicked(event, {
             name: this.props.name,
             address: this.props.address,
@@ -22,6 +23,7 @@ export default class HospitalCard extends React.Component {
 
     handleMouseOver(event) {
         // react to mousing over the card
+        console.log("MOUSED OVER");
         
     }
 
@@ -59,6 +61,7 @@ const style = {
         backgroundColor: '#fff',
         borderRadius: '5px',
         boxShadow: '0px 8px 4px rgba(0, 0, 0, 0.15)',
+        cursor: 'pointer',
     },
     
     HospitalName: {

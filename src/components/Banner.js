@@ -27,9 +27,9 @@ const Banner = (props) => {
 
 const style = {
 	BannerText: {
-		fontSize: '40px',
+		fontSize: '36px',
 		color: 'white',
-		fontWeight: '700',
+		fontWeight: '500',
 		margin: '2.5vh 0',
 	},
 };
