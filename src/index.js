@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from "./FirebaseModule.js";
 
+firebase.analytics();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
