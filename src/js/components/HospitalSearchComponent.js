@@ -14,6 +14,8 @@ export default class HospitalSearchComponent extends React.Component {
             zip_code: "",
             hospitals: [],
         }
+
+        this.handleCardClicked = this.handleCardClicked.bind(this);
     }
 
     componentDidMount() {
@@ -75,11 +77,16 @@ export default class HospitalSearchComponent extends React.Component {
         )
     }
     
+    handleCardClicked(event, card_data) {
+        console.log(event);
+        console.log(card_data);
+    }
+    
 	renderHospitalList() {
 		const hospitals = this.state.hospitals;
 		if (!hospitals) return;
 		return (hospitals.map((hospital) => {
-			return <HospitalCard name={hospital.name} address={hospital.address} />;
+			return <HospitalCard cardClicked={this.handleCardClicked} name={hospital.name} address={hospital.address} />;
         })).slice(0,5);
 	}
 

@@ -8,12 +8,30 @@ import Container from 'react-bootstrap/Container';
 export default class HospitalCard extends React.Component {
     constructor(props) {
         super(props);
+        
+        this.handleClick = this.handleClick.bind(this);
+        this.handleMouseOver = this.handleMouseOver.bind(this);
     }
+
+    handleClick(event) {
+        this.props.cardClicked(event, {
+            name: this.props.name,
+            address: this.props.address,
+        });
+    }
+
+    handleMouseOver(event) {
+        // react to mousing over the card
+        
+    }
+
 	render() {
 		const { setItem, formState } = this.props;
 
 		return (
-			<div style={style.HospitalCard}>
+            <div style={style.HospitalCard} 
+                onMouseOver={(event) => {this.handleMouseOver(event)}}
+                onClick={(event) => {this.handleClick(event)}}>
                 <Container fluid>
                     <Row className="justify-content-center align-items-center"> 
                         <Col className="text-center align-items-center">
