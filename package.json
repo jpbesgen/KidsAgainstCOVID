@@ -12,7 +12,7 @@
     "bootstrap": "^4.4.1",
     "catenary-curve": "^1.0.1",
     "events": "^3.1.0",
-    "firebase": "^7.14.2",
+    "firebase": "^7.24.0",
     "google-map-react": "^1.1.7",
     "google-maps-react": "^2.0.6",
     "lazy-brush": "^1.0.1",
